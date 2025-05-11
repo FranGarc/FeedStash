@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.hilt)
+    id("kotlin-kapt")
 }
 
 android {
@@ -21,21 +23,50 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
+    }
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+            all {
+                it.useJUnitPlatform()
+            }
+        }
     }
 }
 
 dependencies {
 
+    implementation(project(":domain"))
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    implementation(project(":domain"))
+
+    implementation(libs.rss.parser)
+
+    //dependency injection
+//    implementation (libs.dagger)
+//    kapt( libs.dagger.compiler)
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+
+    //testing
     testImplementation(libs.junit)
+
+    testImplementation(libs.jupiter)
+    testRuntimeOnly(libs.jupiter.engine)
+    testImplementation(libs.jupiter.params)
+    testImplementation(libs.coroutines.test)
+
+    testImplementation(libs.mockk)
+    testImplementation(libs.mockwebserver)
+
+
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    testImplementation(kotlin("test"))
 }
