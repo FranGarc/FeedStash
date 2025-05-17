@@ -2,8 +2,8 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-//    alias(libs.plugins.hilt)
-//    alias(libs.plugins.kapt)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -65,7 +65,7 @@ dependencies {
 //    implementation (libs.dagger)
 //    kapt( libs.dagger.compiler)
     implementation(libs.hilt.android)
-//    kapt(libs.hilt.compiler)
+    ksp(libs.hilt.compiler)
 
 
 
