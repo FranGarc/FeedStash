@@ -1,10 +1,8 @@
 [versions]
 ## plugins
-hiltPluginVersion = "2.56.2" #17 Apr 2025
-agp = "8.9.2"
+agp = "8.10.0"
 kotlin = "2.0.20"
-kaptVersion = "2.1.20" #20 Mar 2025 (last stable release)
-ksp = "2.0.0-1.0.22"
+ksp = "2.0.20-1.0.25"
 
 coreKtx = "1.16.0"
 junit = "4.13.2"
@@ -15,13 +13,11 @@ activityCompose = "1.10.1"
 composeCompiler = "1.5.15"
 composeBom = "2025.05.00"
 jsoup = "1.20.1"
-rssParser = "6.0.10"
 appcompat = "1.7.0"
 material = "1.12.0"
 
 ## dependency injection
-daggerVersion = "2.48"
-hilt = "2.48"
+hilt = "2.56.2"
 ## Data
 rssparserVersion = "6.0.10" #release 27 Feb 2025
 
@@ -37,11 +33,9 @@ androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = 
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 
 ## dependency injection
-dagger = { group = "com.google.dagger", name = "dagger", version.ref = "daggerVersion" }
-dagger-compiler = { group = "com.google.dagger", name = "dagger-compiler", version.ref = "daggerVersion" }
 # Hilt
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
-hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
 
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
@@ -81,4 +75,4 @@ android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hiltPluginVersion" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }

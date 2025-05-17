@@ -2,7 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    id("kotlin-kapt")
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -41,12 +42,11 @@ android {
 }
 
 dependencies {
-
-
     implementation(project(":resources"))
     implementation(project(":data"))
     implementation(project(":domain"))
     implementation(project(":presentation"))
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.ui.compiler)
@@ -57,8 +57,6 @@ dependencies {
 
 
     //dependency injection
-//    implementation (libs.dagger)
-//    kapt( libs.dagger.compiler)
     implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
+    ksp(libs.hilt.compiler)
 }

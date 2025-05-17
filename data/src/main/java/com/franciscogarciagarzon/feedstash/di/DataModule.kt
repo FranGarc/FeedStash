@@ -1,7 +1,7 @@
 package com.franciscogarciagarzon.feedstash.di
 
-import com.franciscogarciagarzon.feedstash.rssparser.RssParser
-import com.franciscogarciagarzon.feedstash.rssparser.RssParserImpl
+import com.prof18.rssparser.RssParser
+import com.prof18.rssparser.RssParserBuilder
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -11,7 +11,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object AppModule {
+object DataModule {
 
     @Provides
     @Singleton
@@ -21,7 +21,10 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideRssParser(httpClient: OkHttpClient): RssParser {
-        return RssParserImpl( httpClient )
+    fun provideRssParser(okHttpClient: OkHttpClient): RssParser {
+       return RssParserBuilder(
+            callFactory = okHttpClient,
+            charset = Charsets.UTF_8,
+        ).build()
     }
 }

@@ -1,6 +1,6 @@
 package com.franciscogarciagarzon.feedstash.domain.rssparser.model
 
-data class RssImage(
+data class FeedStashRssImage(
     val title: String = "",
     val url: String = "",
     val link: String = "",
