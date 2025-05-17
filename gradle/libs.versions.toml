@@ -3,13 +3,15 @@
 agp = "8.9.3"
 kotlin = "2.0.20"
 ksp = "2.0.20-1.0.25"
+#junit5PluginVersion = "1.12.0.0" #release 1 Mar 2025
+#androidTestVersion = "1.6.1" #release 24 Jun 2024 for rules and 26 Jun 2024 for runner
 
 coreKtx = "1.16.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.9.0"
-activityCompose = "1.10.1"
+activityCompose = "1.8.1" # stable 7 May 2025
 composeCompiler = "1.5.15"
 composeBom = "2025.05.00"
 jsoup = "1.20.1"
@@ -26,6 +28,10 @@ jupiterVersion = "5.12.2" #release 11 Apr 2025
 mockkVersion = "1.14.0" #release 09 Apr 2025
 mockWebServerVersion = "4.12.0"  #17 Oct 2023 #last stable release, 5.x.x still in alpha as of 07 may 2025
 coroutinesTestVersion = "1.10.2" #04 Apr 2025
+testRunner = "1.5.2"
+testRules = "1.5.0"
+#testExtJUnit = "1.1.5"
+
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -63,11 +69,19 @@ jupiter-engine = { group = "org.junit.jupiter", name = "junit-jupiter-engine", v
 jupiter-params = { group = "org.junit.jupiter", name = "junit-jupiter-params", version.ref = "jupiterVersion" }
 
 mockk = { group = "io.mockk", name = "mockk", version.ref = "mockkVersion" }
+#mockk-agent-jvm = { group = "io.mockk", name = "mockk-agent-jvm", version.ref = "mockkVersion" }
 mockwebserver = { group = "com.squareup.okhttp3", name = "mockwebserver", version.ref = "mockWebServerVersion" }
+
 coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutinesTestVersion" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-test-runner = { group = "androidx.test", name = "runner", version.ref = "testRunner" }
+androidx-test-rules = { group = "androidx.test", name = "rules", version.ref = "testRules" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+
+
+
+
 
 [plugins]
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
@@ -76,3 +90,4 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+#junit5-plugin = { id = "de.mannodermaus.android-junit5", version.ref = "junit5PluginVersion" }

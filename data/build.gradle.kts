@@ -1,3 +1,4 @@
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
@@ -6,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.franciscogarciagarzon.feedstash"
+    namespace = "com.franciscogarciagarzon.feedstash.data"
     compileSdk = 35
 
     defaultConfig {
@@ -37,6 +38,18 @@ android {
             }
         }
     }
+    packaging {
+        resources.excludes.addAll(
+            listOf(
+                "META-INF/LICENSE.md",
+                "META-INF/LICENSE-notice.md",
+                "META-INF/NOTICE.md"
+            )
+        )
+    }
+
+
+
 }
 
 dependencies {
@@ -65,8 +78,12 @@ dependencies {
     testImplementation(libs.mockk)
     testImplementation(libs.mockwebserver)
 
+    androidTestImplementation(libs.coroutines.test)
+    androidTestImplementation(libs.jupiter)
+    androidTestImplementation(libs.mockk)
+    androidTestImplementation(libs.androidx.test.runner)
+    androidTestImplementation(libs.androidx.test.rules)
 
-    //androidTestImplementation(libs.androidx.junit)
     //androidTestImplementation(libs.androidx.espresso.core)
     testImplementation(kotlin("test"))
 }

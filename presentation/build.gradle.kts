@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.franciscogarciagarzon.feedstash"
+    namespace = "com.franciscogarciagarzon.feedstash.presentation"
     compileSdk = 35
 
     defaultConfig {

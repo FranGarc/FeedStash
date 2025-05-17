@@ -8,3 +8,9 @@ plugins {
     alias(libs.plugins.ksp) apply false
 }
 
+//buildscript {
+//    dependencies {
+//        classpath (libs.plugins.mannodermaus.gradle.plugin.junit5)
+//    }
+//}
+
