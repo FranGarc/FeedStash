@@ -1,4 +1,4 @@
-package com.franciscogarciagarzon.feedstash.rssparser.mapper
+package com.franciscogarciagarzon.feedstash.data.rssparser.mapper
 
 import com.franciscogarciagarzon.feedstash.domain.rssparser.model.FeedStashRssChannel
 import com.franciscogarciagarzon.feedstash.domain.rssparser.model.FeedStashRssImage

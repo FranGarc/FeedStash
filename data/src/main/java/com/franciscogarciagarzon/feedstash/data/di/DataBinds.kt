@@ -1,7 +1,7 @@
-package com.franciscogarciagarzon.feedstash.di
+package com.franciscogarciagarzon.feedstash.data.di
 
 import com.franciscogarciagarzon.feedstash.domain.rssparser.FeedStashRssParser
-import com.franciscogarciagarzon.feedstash.rssparser.FeedStashRssParserImpl
+import com.franciscogarciagarzon.feedstash.data.rssparser.FeedStashRssParserImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

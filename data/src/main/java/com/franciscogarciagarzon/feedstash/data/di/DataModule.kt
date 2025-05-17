@@ -1,4 +1,4 @@
-package com.franciscogarciagarzon.feedstash.di
+package com.franciscogarciagarzon.feedstash.data.di
 
 import com.prof18.rssparser.RssParser
 import com.prof18.rssparser.RssParserBuilder

@@ -1,8 +1,8 @@
-package com.franciscogarciagarzon.feedstash.rssparser
+package com.franciscogarciagarzon.feedstash.data.rssparser
 
 import com.franciscogarciagarzon.feedstash.domain.rssparser.RssParseException
 import com.franciscogarciagarzon.feedstash.domain.rssparser.FeedStashRssParser
-import com.franciscogarciagarzon.feedstash.rssparser.mapper.toDomain
+import com.franciscogarciagarzon.feedstash.data.rssparser.mapper.toDomain
 import javax.inject.Inject
 import com.franciscogarciagarzon.feedstash.domain.rssparser.model.FeedStashRssChannel
 import com.prof18.rssparser.RssParser

@@ -1,4 +1,4 @@
-package com.franciscogarciagarzon.feedstash.rssparser
+package com.franciscogarciagarzon.feedstash.data.rssparser
 
 import com.franciscogarciagarzon.feedstash.domain.rssparser.RssParseException
 import com.franciscogarciagarzon.feedstash.domain.rssparser.model.FeedStashRssChannel
