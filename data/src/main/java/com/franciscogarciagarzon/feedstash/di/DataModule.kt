@@ -1,7 +1,7 @@
 package com.franciscogarciagarzon.feedstash.di
 
-import com.franciscogarciagarzon.feedstash.domain.rssparser.RssParser
-import com.franciscogarciagarzon.feedstash.rssparser.RssParserImpl
+import com.prof18.rssparser.RssParser
+import com.prof18.rssparser.RssParserBuilder
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,5 +17,14 @@ object DataModule {
     @Singleton
     fun provideOkHttp(): OkHttpClient {
         return OkHttpClient()
+    }
+
+    @Provides
+    @Singleton
+    fun provideRssParser(okHttpClient: OkHttpClient): RssParser {
+       return RssParserBuilder(
+            callFactory = okHttpClient,
+            charset = Charsets.UTF_8,
+        ).build()
     }
 }

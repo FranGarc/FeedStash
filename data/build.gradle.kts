@@ -55,7 +55,7 @@ dependencies {
     ksp(libs.hilt.compiler)
 
     //testing
-    testImplementation(libs.junit)
+    //testImplementation(libs.junit)
 
     testImplementation(libs.jupiter)
     testRuntimeOnly(libs.jupiter.engine)
@@ -66,7 +66,7 @@ dependencies {
     testImplementation(libs.mockwebserver)
 
 
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    //androidTestImplementation(libs.androidx.junit)
+    //androidTestImplementation(libs.androidx.espresso.core)
     testImplementation(kotlin("test"))
 }

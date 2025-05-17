@@ -1,7 +1,7 @@
 package com.franciscogarciagarzon.feedstash.di
 
-import com.franciscogarciagarzon.feedstash.domain.rssparser.RssParser
-import com.franciscogarciagarzon.feedstash.rssparser.RssParserImpl
+import com.franciscogarciagarzon.feedstash.domain.rssparser.FeedStashRssParser
+import com.franciscogarciagarzon.feedstash.rssparser.FeedStashRssParserImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -14,7 +14,7 @@ abstract class DataBinds {
 
     @Binds
     @Singleton
-    abstract fun bindsRssParser(impl: RssParserImpl): RssParser
+    abstract fun bindsRssParser(impl: FeedStashRssParserImpl): FeedStashRssParser
 
 }
 

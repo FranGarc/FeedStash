@@ -1,10 +1,10 @@
 package com.franciscogarciagarzon.feedstash.rssparser
 
-import com.franciscogarciagarzon.feedstash.domain.rssparser.RssParser
+import com.franciscogarciagarzon.feedstash.domain.rssparser.FeedStashRssParser
 import com.franciscogarciagarzon.feedstash.domain.rssparser.model.FeedStashRssChannel
 import okio.IOException
 
-class FailedRssParser: RssParser {
+class FailedFeedStashRssParser: FeedStashRssParser {
     companion object{
 
     }

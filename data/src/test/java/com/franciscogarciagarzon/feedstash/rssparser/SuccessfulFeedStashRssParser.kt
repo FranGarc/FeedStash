@@ -1,11 +1,11 @@
 package com.franciscogarciagarzon.feedstash.rssparser
 
-import com.franciscogarciagarzon.feedstash.domain.rssparser.RssParser
+import com.franciscogarciagarzon.feedstash.domain.rssparser.FeedStashRssParser
 import com.franciscogarciagarzon.feedstash.domain.rssparser.model.FeedStashRssChannel
 import com.franciscogarciagarzon.feedstash.rssparser.mapper.toDomain
 import com.prof18.rssparser.model.RssChannel as LibraryRssChannel
 
-class SuccessfulRssParser: RssParser {
+class SuccessfulFeedStashRssParser: FeedStashRssParser {
     companion object{
         val mockChannel = LibraryRssChannel(
             title = "Test Feed",
