@@ -6,11 +6,7 @@ import com.franciscogarciagarzon.feedstash.rssparser.mapper.toDomain
 import com.prof18.rssparser.RssParserBuilder
 import okhttp3.OkHttpClient
 import javax.inject.Inject
-import com.franciscogarciagarzon.feedstash.domain.rssparser.model.RssChannel
-import com.prof18.rssparser.model.RssChannel as LibraryRssChannel
-
-
-import java.io.IOException
+import com.franciscogarciagarzon.feedstash.domain.rssparser.model.FeedStashRssChannel
 
 class RssParserImpl @Inject constructor(
     private val okHttpClient: OkHttpClient
@@ -23,7 +19,7 @@ class RssParserImpl @Inject constructor(
         ).build()
     }
 
-    override suspend fun getRssChannelFromUrl(url: String): Result<RssChannel> {
+    override suspend fun getRssChannelFromUrl(url: String): Result<FeedStashRssChannel> {
         return try {
             Result.success(parser.getRssChannel(url).toDomain())
         } catch (e: Exception) {
@@ -31,7 +27,7 @@ class RssParserImpl @Inject constructor(
         }
     }
 
-    override suspend fun getRssChannelFromXmlString(xmlString: String): Result<RssChannel> {
+    override suspend fun getRssChannelFromXmlString(xmlString: String): Result<FeedStashRssChannel> {
         return try {
             Result.success(parser.parse(xmlString).toDomain())
         } catch (e: Exception) {

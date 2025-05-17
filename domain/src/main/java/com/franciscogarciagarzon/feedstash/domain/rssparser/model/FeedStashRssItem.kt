@@ -1,6 +1,6 @@
 package com.franciscogarciagarzon.feedstash.domain.rssparser.model
 
-data class RssItem(
+data class FeedStashRssItem(
     val guid: String = "",
     val title: String = "",
     val author: String = "",

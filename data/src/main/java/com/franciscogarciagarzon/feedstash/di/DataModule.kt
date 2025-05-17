@@ -1,6 +1,6 @@
 package com.franciscogarciagarzon.feedstash.di
 
-import com.franciscogarciagarzon.feedstash.rssparser.RssParser
+import com.franciscogarciagarzon.feedstash.domain.rssparser.RssParser
 import com.franciscogarciagarzon.feedstash.rssparser.RssParserImpl
 import dagger.Module
 import dagger.Provides
@@ -11,7 +11,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object AppModule {
+object DataModule {
 
     @Provides
     @Singleton

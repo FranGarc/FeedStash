@@ -1,5 +1,5 @@
 import com.franciscogarciagarzon.feedstash.domain.rssparser.RssParser
-import com.franciscogarciagarzon.feedstash.domain.rssparser.model.RssChannel
+import com.franciscogarciagarzon.feedstash.domain.rssparser.model.FeedStashRssChannel
 import com.franciscogarciagarzon.feedstash.rssparser.RssParserImpl
 import com.franciscogarciagarzon.feedstash.rssparser.mapper.toDomain
 import com.prof18.rssparser.RssParserBuilder
@@ -47,7 +47,7 @@ class RssParserImplTest {
         val testUrl = "https://example.com/rss"
         val mockChannel = mockk<LibraryRssChannel> {
             every { title } returns "Test Feed"
-            every { toDomain() } returns RssChannel(title = "Test Feed")
+            every { toDomain() } returns FeedStashRssChannel(title = "Test Feed")
         }
         coEvery { mockRssParser.getRssChannel(testUrl) } returns mockChannel
 
@@ -81,7 +81,7 @@ class RssParserImplTest {
         val testXml = "<rss><title>Test</title></rss>"
         val mockChannel = mockk<LibraryRssChannel> {
             every { title } returns "Test Feed"
-            every { toDomain() } returns RssChannel(title = "Test Feed")
+            every { toDomain() } returns FeedStashRssChannel(title = "Test Feed")
         }
         coEvery { mockRssParser.parse(testXml) } returns mockChannel
 
