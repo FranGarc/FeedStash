@@ -2,20 +2,19 @@ package com.franciscogarciagarzon.feedstash.di
 
 import com.franciscogarciagarzon.feedstash.domain.rssparser.RssParser
 import com.franciscogarciagarzon.feedstash.rssparser.RssParserImpl
+import dagger.Binds
 import dagger.Module
-import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import okhttp3.OkHttpClient
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object DataModule {
+abstract class DataBinds {
 
-    @Provides
+    @Binds
     @Singleton
-    fun provideOkHttp(): OkHttpClient {
-        return OkHttpClient()
-    }
+    abstract fun bindsRssParser(impl: RssParserImpl): RssParser
+
 }
+

@@ -42,12 +42,11 @@ android {
 }
 
 dependencies {
-
-
     implementation(project(":resources"))
     implementation(project(":data"))
     implementation(project(":domain"))
     implementation(project(":presentation"))
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.ui.compiler)
@@ -58,8 +57,6 @@ dependencies {
 
 
     //dependency injection
-//    implementation (libs.dagger)
-//    kapt( libs.dagger.compiler)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
 }
